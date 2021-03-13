@@ -1,0 +1,60 @@
+{
+  "name": "nextjs-typescript-boilerplate",
+  "version": "1.0.0",
+  "author": "Samuel Quiñones",
+  "description": "A more advanced Typescript starter for nextjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SamuelQuinones/nextjs-typescript-boilerplate"
+  },
+  "bugs": {
+    "url": "https://github.com/SamuelQuinones/nextjs-typescript-boilerplate/issues"
+  },
+  "license": "MIT",
+  "config": {
+    "static_out": "out"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "dev:debug": "NODE_OPTIONS='--inspect' next dev",
+    "build": "npm run clean && next build",
+    "build:full": "npm run build && npm run export",
+    "export": "cross-env-shell \"next export -o $npm_package_config_static_out\"",
+    "start": "next start -p 8080",
+    "start:dev": "next start -p 3012",
+    "start:static": "cross-env-shell \"serve $npm_package_config_static_out\"",
+    "clean": "npm run clean:next && npm run clean:static",
+    "clean:next": "rimraf .next",
+    "clean:static": "cross-env-shell \"rimraf $npm_package_config_static_out\"",
+    "clean:light": "cross-env-shell \"rimraf .next/* && rimraf $npm_package_config_static_out/*\"",
+    "eslint": "eslint --ext js,tx,tsx",
+    "lint": "npm run eslint src",
+    "lint:fix": "npm run eslint -- --fix src",
+    "pretty:check": "prettier --check .",
+    "pretty:fix": "prettier --write ."
+  },
+  "dependencies": {
+    "next": "10.0.8",
+    "node-sass": "^5.0.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.34",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "2.2.1",
+    "rimraf": "^3.0.2",
+    "serve": "^11.3.2",
+    "typescript": "^4.2.3"
+  }
+}
