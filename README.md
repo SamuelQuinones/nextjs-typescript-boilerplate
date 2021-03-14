@@ -40,7 +40,7 @@ I've also made what I would describe as "quality of development" changes:
 
 ## Eslint & Prettier
 
-**_Prettier_** is used to help make files look more "pretty" or more with eachother. It fixes smaller things like extra lines, single vs double quotes, how many characters belong on a line before the line needs to be wrapped, and more.
+**_Prettier_** is used to help make files look more "pretty" or more uniform with eachother. It fixes smaller things like extra lines, single vs double quotes, how many characters belong on a line before the line needs to be wrapped, and more.
 
 **_Eslint_** is used to help enforce `prettier` rules and display warnings that the user can act on. Some IDE's will even show errors or warnings if the code breaks eslint's rules. Eslint also has plugins which can extend how useful it is.
 
