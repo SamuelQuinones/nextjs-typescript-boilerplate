@@ -84,7 +84,7 @@ import { helperFunction } from "src/helpers/MyHelpers";
 Why did I include `rimraf`, `cross-env` and `serve` you may ask?
 
 1. `rimraf` was added to help with cleaning of build directories. When building / rebuilding NextJS doesn't do a great job of cleaning earlier builds (it leaves behind old build caches) so rimraf helps to clean those folders before a new build is created. Both for regular and static builds.
-2. `cross-env` was added to allow for the use of environment variables in npm scripts across multiple platforms. Currently it is only used to customize the statix export directory.
+2. `cross-env` was added to allow for the use of environment variables in npm scripts across multiple platforms. Currently it is only used to customize the static export directory.
 3. `serve` was added for those who are opting for pure static exports of their NextJS project. Serve allows you to preview your static build. It is similar to "live preview" for a stock-html project.
 
 ## The NPM Scripts
