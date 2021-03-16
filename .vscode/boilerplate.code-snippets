@@ -1,0 +1,93 @@
+{
+  // Place your nextjs-typescript-boilerplate workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "React Functional Component": {
+    "scope": "typescriptreact",
+    "prefix": "rfci",
+    "body": [
+      "import React from 'react';",
+      "",
+      "",
+      "const $1: React.FC = () => {",
+      "\treturn($2);",
+      "};"
+    ],
+    "description": "Typescript React Functional Component"
+  },
+  "React Functional Component w/Props": {
+    "scope": "typescriptreact",
+    "prefix": "rfcip",
+    "body": [
+      "import React from 'react';",
+      "",
+      "",
+      "type $2 {",
+      "\t$3",
+      "};",
+      "",
+      "const $1: React.FC<$2> = (props) => {",
+      "\treturn($4);",
+      "};"
+    ],
+    "description": "Typescript React Functional Component with Props"
+  },
+  "React Functional Component wo/import": {
+    "scope": "typescriptreact",
+    "prefix": "rfc",
+    "body": ["const $1: React.FC = () => {", "\treturn($2);", "};"],
+    "description": "Typescript React Functional Component without an import"
+  },
+  "React Functional Component w/Props wo/import": {
+    "scope": "typescriptreact",
+    "prefix": "rfcp",
+    "body": [
+      "type $2 {",
+      "\t$3",
+      "};",
+      "",
+      "const $1: React.FC<$2> = (props) => {",
+      "\treturn($4);",
+      "};"
+    ],
+    "description": "Typescript React Functional Component with Props and without an import"
+  },
+
+  "React UseState": {
+    "scope": "typescriptreact",
+    "prefix": "reust",
+    "body": "const [$1, set${1/([a-zA-Z])/${1:/upcase}/}] = useState<$2>($3);",
+    "description": "Sets up new state hooks"
+  },
+  "React UseState React DOT": {
+    "scope": "typescriptreact",
+    "prefix": "reustd",
+    "body": "const [$1, set${1/([a-zA-Z])/${1:/upcase}/}] = React.useState<$2>($3);",
+    "description": "Sets up new state hooks with React.useState"
+  },
+  "React UseState No Type": {
+    "scope": "typescriptreact",
+    "prefix": "reus",
+    "body": "const [$1, set${1/([a-zA-Z])/${1:/upcase}/}] = useState($2);",
+    "description": "Sets up new state hooks without a specified type"
+  },
+  "React UseState React DOT No Type": {
+    "scope": "typescriptreact",
+    "prefix": "reusd",
+    "body": "const [$1, set${1/([a-zA-Z])/${1:/upcase}/}] = React.useState($2);",
+    "description": "Sets up new state hooks with React.useState without a specified type"
+  }
+}
