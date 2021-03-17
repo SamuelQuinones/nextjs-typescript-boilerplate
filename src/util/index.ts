@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import type { OBJ } from "./Types";
+import type { OBJ } from "@util/Types";
 
 /**
  * This is a custom hook that we have to use for any all all hash URL's.

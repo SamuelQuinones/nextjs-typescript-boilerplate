@@ -4,6 +4,10 @@ Over the past few months, I've worked on several [Next.js](https://nextjs.org/) 
 
 This boilerplate was put together with **NPM** but is **absoutely usable with YARN**. If you do opt to use yarn, remember to delete the `package-lock.json` 😉.
 
+This boilerplate does include a `.vscode` folder as I myself use I myself use [Visual Studio Code](https://code.visualstudio.com/) like with NPM and YARN; **you can use this boiler plate with any IDE!**
+
+If **_you_** use Visual Studio Code, you can make use of some [added benefits](#the-vscode-folder) in this boilerplate.
+
 By default, this project has a [MIT](https://choosealicense.com/licenses/mit/) License, if your project uses a different license or no license at all, be sure to modify or delete accordingly.
 
 You can learn more about choosing a license here https://choosealicense.com/licenses/mit/ and here https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository
@@ -54,10 +58,9 @@ With larger scale projects, it can be hard to keep track of all of your files an
     "baseUrl": ".",
     "paths": {
       "@components/*": ["./src/components/*"],
-      "@util": ["./src/util"],
-      "@util/*": ["./src/util/*"]
+      "@util": ["./src/util"], // points to util/index.ts
+      "@util/*": ["./src/util/*"] // points to other files in the util folder
     },
-    ...
 }
 ```
 
@@ -89,29 +92,7 @@ Why did I include `rimraf`, `cross-env` and `serve` you may ask?
 
 ## The NPM Scripts
 
-Below I will attempt to explain each script and the purpose it has.
-
-```json
-"scripts": {
-    "dev": "next dev",
-    "dev:debug": "NODE_OPTIONS='--inspect' next dev",
-    "build": "npm run clean && next build",
-    "build:full": "npm run build && npm run export",
-    "export": "cross-env-shell \"next export -o $npm_package_config_static_out\"",
-    "start": "next start -p 8080",
-    "start:dev": "next start -p 3012",
-    "start:static": "cross-env-shell \"serve $npm_package_config_static_out\"",
-    "clean": "npm run clean:next && npm run clean:static",
-    "clean:next": "rimraf .next",
-    "clean:static": "cross-env-shell \"rimraf $npm_package_config_static_out\"",
-    "clean:light": "cross-env-shell \"rimraf .next/* && rimraf $npm_package_config_static_out/*\"",
-    "eslint": "eslint --ext js,tx,tsx",
-    "lint": "npm run eslint src",
-    "lint:fix": "npm run eslint -- --fix src",
-    "pretty:check": "prettier --check .",
-    "pretty:fix": "prettier --write ."
-  },
-```
+Below I will attempt to explain each script in `package.json` and the purpose it has.
 
 From top to bottom:
 
@@ -132,3 +113,38 @@ From top to bottom:
 - `lint:fix` runs `lint` but with the `--fix` argument which will actually fix the errors.
 - `pretty:check` uses `prettier` to check files against the rules in `.prettierrc`.
 - `pretty:fix` uses `prettier` to FIX issues with files using rules in `.prettierrc`.
+
+## The `.vscode` Folder
+
+As I said aboce; I use [Visual Studio Code](https://code.visualstudio.com/) as my IDE. It is lightweight and very powerful. If you too use Visual Studio Code, then you have access to some more tools!
+
+### Useful User Snippets
+
+You may not have a need for these, but I make use of these snippets every day. They act as short hand for several common and often tedious to write lines of code. They take care of things like making a new React functional component and setting up a useState hook.
+
+### Recommended Extensions
+
+You may already have these or you may find you don't want them, but I've included a json file that will prompt you to install some extensions that the workspace recommends. All are official extensions from the vscode marketplace!
+
+- Chrome Debugger
+- Editorconfig Control
+- Vscode Eslint
+- HTML css class completion
+- javascript snippets
+- node module intellisense
+- npm script shortcuts
+- npm intellisense
+- Vscode Prettier
+- Gitlens
+- Vscode Icons
+- Dotenv Intellisense
+- Search Node Modules
+- Bracker Pair Colorizer
+
+### Debug Configuration
+
+If you find you make use of the debug script, running debug through Visual Studio Code will allow you to have full control over the experience. You can add breakpoints, pause and resume execution, [and much more!](https://nextjs.org/docs/advanced-features/debugging)
+
+### Configurable Tasks
+
+Instead of having to open your terminal and type `npm run build` every time, you can configure tasks that get bound to keys. Currently the default task is `npm run build` which can be run by pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> on Windows and <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> on Mac.

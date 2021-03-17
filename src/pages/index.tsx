@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Button from "@components/Button";
 import styles from "../assets/styles/Home.module.css";
+import { prettyPrint } from "@util"; // import alias
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Button onClick={() => alert("Alerted!")}>
+        <Button onClick={() => alert(prettyPrint({ message: "hello" }))}>
           This is a Custom Component
         </Button>
         <h1 className={styles.title}>
