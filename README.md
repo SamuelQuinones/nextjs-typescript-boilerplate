@@ -31,6 +31,7 @@ I've also made what I would describe as "quality of development" changes:
 - Added some extra fonts I've used - and an accompanying `_fonts.scss` file.
 - Added a simple Button component in `src/components/Button.tsx` to demonstrate organization and also the custom import path configuration that Typescript allows.
 - Added [Eslint](https://eslint.org/) and [prettier](https://prettier.io/) - which are configured to work together - to help with code format concistency. There is a NPM script that can look for problems and attempt to fix them!
+- Added [Stlyelint](https://stylelint.io/) for better css / scss linting.
 - Added `.gitattributes` take from https://github.com/alexkaratarakis/gitattributes/blob/master/Web.gitattributes I've found that this helps with cross platform development (those pesky line endings!)
 - Added `.editorconfig` to help with concistency and cross-platform development
 - Added some utilities under `src/util`:
@@ -42,11 +43,13 @@ I've also made what I would describe as "quality of development" changes:
   - serve
   - cross-env
 
-## Eslint & Prettier
+## Eslint, Prettier, & Stylelint
 
 **_Prettier_** is used to help make files look more "pretty" or more uniform with eachother. It fixes smaller things like extra lines, single vs double quotes, how many characters belong on a line before the line needs to be wrapped, and more.
 
 **_Eslint_** is used to help enforce `prettier` rules and display warnings that the user can act on. Some IDE's will even show errors or warnings if the code breaks eslint's rules. Eslint also has plugins which can extend how useful it is.
+
+**_Stylelint_** is used to provide linting support for css and scss files.
 
 ## Tsconfig Paths
 
@@ -109,6 +112,7 @@ From top to bottom:
 - `clean:static` "cleans" the `static_out` directory by deleting it.
 - `clean:light` "cleans" the **_contents_** of the `.next` and `static_out` folders by deleting what is inside - does not delete the folders. This could be useful depending on how you deploy your app.
 - `eslint` specifies the parameters with which to run eslint using rules set in `.eslintrc.js`.
+- `stylelint` runs stylelint on all css, scss, and sass files in the `src/assets/styles` directory using rules in `.stylelintrc`.
 - `lint` runs `eslint` on the `src` directory and the contents. This will only warn you of prolems, not fix them.
 - `lint:fix` runs `lint` but with the `--fix` argument which will actually fix the errors.
 - `pretty:check` uses `prettier` to check files against the rules in `.prettierrc`.
@@ -117,6 +121,8 @@ From top to bottom:
 ## The `.vscode` Folder
 
 As I said aboce; I use [Visual Studio Code](https://code.visualstudio.com/) as my IDE. It is lightweight and very powerful. If you too use Visual Studio Code, then you have access to some more tools!
+
+If you opt not to use stylelint, remember to change the settings in `.vscode/settings.json` to re-enable the builtin linting.
 
 ### Useful User Snippets
 
@@ -140,6 +146,8 @@ You may already have these or you may find you don't want them, but I've include
 - Dotenv Intellisense
 - Search Node Modules
 - Bracker Pair Colorizer
+- SCSS Intellisense
+- Stylelint support
 
 ### Debug Configuration
 
