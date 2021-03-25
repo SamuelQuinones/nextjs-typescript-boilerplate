@@ -113,8 +113,8 @@ From top to bottom:
 - `clean:light` "cleans" the **_contents_** of the `.next` and `static_out` folders by deleting what is inside - does not delete the folders. This could be useful depending on how you deploy your app.
 - `eslint` specifies the parameters with which to run eslint using rules set in `.eslintrc.js`.
 - `stylelint` runs stylelint on all css, scss, and sass files in the `src/assets/styles` directory using rules in `.stylelintrc`.
-- `lint` runs `eslint` on the `src` directory and the contents. This will only warn you of prolems, not fix them.
-- `lint:fix` runs `lint` but with the `--fix` argument which will actually fix the errors.
+- `lint` runs `eslint` on the `src` directory and the contents. Also runs `stylelint` This will only warn you of prolems, not fix them.
+- `lint:fix` runs `lint` but with the `--fix` argument which will actually fix the errors for both Typescript and SCSS.
 - `pretty:check` uses `prettier` to check files against the rules in `.prettierrc`.
 - `pretty:fix` uses `prettier` to FIX issues with files using rules in `.prettierrc`.
 
