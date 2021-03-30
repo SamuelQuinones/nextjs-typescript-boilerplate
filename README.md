@@ -22,7 +22,7 @@ This boilerplate is as **bare-bones as possible**. It includes the stock NextJS 
 - makes use of an `assets` directory to house things like styles, fonts, and possibly theme configurations
 - The `globals.css` file has been changed to a `globals.scss` file
 - All `.js` files have been converted into `.ts` or `.tsx` files accordingly - because this _is_ using Typescript.
-- Added `node-sass` to compile scss files without any additional configuration
+- Added `sass` to compile scss files without any additional configuration - switched from `node-sass` to the dart version.
 
 ## Additions
 
