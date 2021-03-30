@@ -4,13 +4,13 @@ Over the past few months, I've worked on several [Next.js](https://nextjs.org/) 
 
 This boilerplate was put together with **NPM** but is **absoutely usable with YARN**. If you do opt to use yarn, remember to delete the `package-lock.json` 😉.
 
-This boilerplate does include a `.vscode` folder as I myself use I myself use [Visual Studio Code](https://code.visualstudio.com/) like with NPM and YARN; **you can use this boiler plate with any IDE!**
+As a side note - even if you are using `npm`, I recommend deleting the `package-lock.json` file and running `npm install` to reset it **before you make any changes to the rest of the template**
 
-If **_you_** use Visual Studio Code, you can make use of some [added benefits](#the-vscode-folder) in this boilerplate.
+If you use [Visual Studio Code](https://code.visualstudio.com/), you can make use of some [added benefits](#the-vscode-folder) in this boilerplate. Like with NPM and YARN; **you can use this boiler plate with any IDE!**
 
 By default, this project has a [MIT](https://choosealicense.com/licenses/mit/) License, if your project uses a different license or no license at all, be sure to modify or delete accordingly.
 
-You can learn more about choosing a license here https://choosealicense.com/licenses/mit/ and here https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository
+You can learn more about choosing a license here https://choosealicense.com/ and here https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository
 
 I am always open to suggestions on how to improve this, so if you have something you'd like to suggest feel free to open a PR! And if you face problems you can open an issue and we'll try and get it sorted!
 
@@ -28,7 +28,7 @@ This boilerplate is as **bare-bones as possible**. It includes the stock NextJS 
 
 I've also made what I would describe as "quality of development" changes:
 
-- Added some extra fonts I've used - and an accompanying `_fonts.scss` file.
+- Added some extra fonts I've used - and an accompanying `_fonts.scss` file - even if you don't use them, this shows how you can implement your own!
 - Added a simple Button component in `src/components/Button.tsx` to demonstrate organization and also the custom import path configuration that Typescript allows.
 - Added [Eslint](https://eslint.org/) and [prettier](https://prettier.io/) - which are configured to work together - to help with code format concistency. There is a NPM script that can look for problems and attempt to fix them!
 - Added [Stlyelint](https://stylelint.io/) for better css / scss linting.
@@ -42,6 +42,36 @@ I've also made what I would describe as "quality of development" changes:
   - rimraf
   - serve
   - cross-env
+
+## Save-Exact Approach
+
+I've included a `.npmrc` file that defaults the behavior to save-exact. This means that adding a dependency will install it at the specific version with no carat (`^`).
+
+```json
+{
+  "dependencies": {
+    "next": "10.1.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "sass": "1.32.8"
+  }
+}
+```
+
+as opposed to this
+
+```json
+{
+  "dependencies": {
+    "next": "^10.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass": "^1.32.8"
+  }
+}
+```
+
+This is a personal choice as I have found it makes maintaining projects across multiple machines easier - especially as the project scales. If you don't want to take this approach, you can remove the `.npmrc` file and simply add a carat (`^`) to the packages.
 
 ## Eslint, Prettier, & Stylelint
 
