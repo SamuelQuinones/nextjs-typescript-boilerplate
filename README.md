@@ -150,7 +150,7 @@ From top to bottom:
 
 ## The `.vscode` Folder
 
-As I said aboce; I use [Visual Studio Code](https://code.visualstudio.com/) as my IDE. It is lightweight and very powerful. If you too use Visual Studio Code, then you have access to some more tools!
+As I said above; I use [Visual Studio Code](https://code.visualstudio.com/) as my IDE. It is lightweight and very powerful. If you too use Visual Studio Code, then you have access to some more tools!
 
 If you opt not to use stylelint, remember to change the settings in `.vscode/settings.json` to re-enable the builtin linting.
 
