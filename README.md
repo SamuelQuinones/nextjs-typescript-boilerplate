@@ -6,7 +6,7 @@ This boilerplate was put together with **NPM** but is **absoutely usable with YA
 
 As a side note - even if you are using `npm`, I recommend deleting the `package-lock.json` file and running `npm install` to reset it **before you make any changes to the rest of the template**
 
-If you use [Visual Studio Code](https://code.visualstudio.com/), you can make use of some [added benefits](#the-vscode-folder) in this boilerplate. Like with NPM and YARN; **you can use this boiler plate with any IDE!**
+If you use [Visual Studio Code](https://code.visualstudio.com/), you can make use of some [added benefits](#the-vscode-folder) in this boilerplate. Like with NPM and YARN; **you can use this boilerplate with any IDE!**
 
 By default, this project has a [MIT](https://choosealicense.com/licenses/mit/) License, if your project uses a different license or no license at all, be sure to modify or delete accordingly.
 
