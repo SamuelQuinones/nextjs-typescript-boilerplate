@@ -14,9 +14,9 @@ export const useHashChange = () => {
       setTimeout(() => {
         const id = path.replace("#", "");
         const el = window.document.getElementById(id);
-        const r = el.getBoundingClientRect();
+        const r = el?.getBoundingClientRect();
         window.top.scroll({
-          top: pageYOffset + r.top,
+          top: pageYOffset + (r?.top || 0),
           behavior: "smooth",
         });
       }, 100);
@@ -34,7 +34,7 @@ export const useHashChange = () => {
  * @returns Two-Dimmensional Array of type T
  *
  * @example
- * // returns [[1,2],[3,4]]
+ * //* returns [[1,2],[3,4]]
  * chunkArray([1,2,3,4],2);
  */
 export function chunkArray<T>(array: T[], chunkSize: number) {
@@ -52,7 +52,7 @@ export function chunkArray<T>(array: T[], chunkSize: number) {
  * @returns modified string
  *
  * @example
- * // returns "Stream-pi"
+ * //* returns "Stream-pi"
  * capitalize("stream-pi")
  */
 export function capitalize(str: string) {
@@ -62,16 +62,17 @@ export function capitalize(str: string) {
 /**
  * Takes in an array of objects, and produces a new Set of a common object property value.
  *
+ * @template T any kind of object shape
  * @param arr array of objects
  * @param key string, key of object
  *
  * @example
  * type Person = {name: string, age: number};
  * const people: Person[] = [{name: "Bob", age: 24},{name: "Mark", age: 20}]
- * // returns ["Bob", "Mark"]
+ * //* returns ["Bob", "Mark"]
  * propertySet(people, "name");
  */
-export function propertySet(arr: OBJ[], key: keyof OBJ) {
+export function propertySet<T extends OBJ>(arr: T[], key: keyof T) {
   return new Set(arr.map((obj) => obj[key]));
 }
 
@@ -86,11 +87,11 @@ export function propertySet(arr: OBJ[], key: keyof OBJ) {
  *
  * @example
  * const emptyObj = {};
- * // returns true
+ * //* returns true
  * isEmpty(emptyObj);
  * @example
  * const nonEmpty = {property: "value"};
- * // returns false
+ * //* returns false
  * isEmpty(nonEmpty);
  */
 export function isEmpty(obj: OBJ) {
