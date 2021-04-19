@@ -21,6 +21,7 @@ This boilerplate is as **bare-bones as possible**. It includes the stock NextJS 
 - Makes use of a `src` directory to keep things clean and orderly
 - makes use of an `assets` directory to house things like styles, fonts, and possibly theme configurations
 - The `globals.css` file has been changed to a `globals.scss` file
+- Typescript strict mode is enabled by default
 - All `.js` files have been converted into `.ts` or `.tsx` files accordingly - because this _is_ using Typescript.
 - Added `sass` to compile scss files without any additional configuration - switched from `node-sass` to the dart version.
 
@@ -53,7 +54,7 @@ I've included a `.npmrc` file that defaults the behavior to save-exact. This mea
     "next": "10.1.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "sass": "1.32.8"
+    "sass": "1.32.11"
   }
 }
 ```
@@ -85,7 +86,7 @@ This is a personal choice as I have found it makes maintaining projects across m
 
 With larger scale projects, it can be hard to keep track of all of your files and where they are. With the inclusion of `paths` and `basePath` imports are much more uniform and a lot less "ugly".
 
-```json
+```jsonc
 {
   "compilerOptions": {
     "baseUrl": ".",
@@ -141,6 +142,7 @@ From top to bottom:
 - `clean:next` "cleans" the `.next` folder by deleting it.
 - `clean:static` "cleans" the `static_out` directory by deleting it.
 - `clean:light` "cleans" the **_contents_** of the `.next` and `static_out` folders by deleting what is inside - does not delete the folders. This could be useful depending on how you deploy your app.
+- `checkTs` can quickly check your typescript for rule violations, useful if you just moved around a lot of files.
 - `eslint` specifies the parameters with which to run eslint using rules set in `.eslintrc.js`.
 - `stylelint` runs stylelint on all css, scss, and sass files in the `src/assets/styles` directory using rules in `.stylelintrc`.
 - `lint` runs `eslint` on the `src` directory and the contents. Also runs `stylelint` This will only warn you of prolems, not fix them.
