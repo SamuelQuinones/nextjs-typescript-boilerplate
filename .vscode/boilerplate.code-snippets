@@ -10,7 +10,7 @@
   // 	"scope": "javascript,typescript",
   // 	"prefix": "log",
   // 	"body": [
-  // 		"console.log('$1');",
+  // 		"console.log(\"$1\");",
   // 		"$2"
   // 	],
   // 	"description": "Log output to console"
@@ -19,7 +19,7 @@
     "scope": "typescriptreact",
     "prefix": "rfci",
     "body": [
-      "import React from 'react';",
+      "import React from \"react\";",
       "",
       "",
       "const $1: React.FC = () => {",
@@ -32,7 +32,7 @@
     "scope": "typescriptreact",
     "prefix": "rfcip",
     "body": [
-      "import React from 'react';",
+      "import React from \"react\";",
       "",
       "",
       "type $2 = {",
