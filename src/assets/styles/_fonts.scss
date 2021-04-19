@@ -1,53 +1,57 @@
+/* LATO */
 @font-face {
   font-family: "Lato";
-  src: local("Lato"), url(../fonts/Lato-Regular.ttf) format("truetype");
-  font-weight: 400;
+  src: local("Lato"), url(../fonts/Lato/Lato-Light.ttf) format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: local("Lato"), url(../fonts/Lato/Lato-Regular.ttf) format("truetype");
+  font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Lato";
-  src: local("Lato"), url(../fonts/Lato-Bold.ttf) format("truetype");
-  font-weight: 700;
-  font-style: bold;
-}
-
-@font-face {
-  font-family: "Lato";
-  src: local("Lato"), url(../fonts/Lato-Italic.ttf) format("truetype");
-  font-weight: 400;
+  src: local("Lato"), url(../fonts/Lato/Lato-Italic.ttf) format("truetype");
+  font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Lato";
-  src: local("Lato"), url(../fonts/Lato-Light.ttf) format("truetype");
+  src: local("Lato"), url(../fonts/Lato/Lato-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ROBOTO */
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), url(../fonts/Roboto/Roboto-Light.ttf) format("truetype");
   font-weight: 300;
 }
 
 @font-face {
   font-family: "Roboto";
-  src: local("Roboto"), url(../fonts/Roboto-Regular.ttf) format("truetype");
-  font-weight: 400;
+  src: local("Roboto"),
+    url(../fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+  font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Roboto";
-  src: local("Roboto"), url(../fonts/Roboto-Bold.ttf) format("truetype");
-  font-weight: 700;
-  font-style: bold;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: local("Roboto"), url(../fonts/Roboto-Italic.ttf) format("truetype");
-  font-weight: 400;
+  src: local("Roboto"),
+    url(../fonts/Roboto/Roboto-Italic.ttf) format("truetype");
+  font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Roboto";
-  src: local("Roboto"), url(../fonts/Roboto-Light.ttf) format("truetype");
-  font-weight: 300;
+  src: local("Roboto"), url(../fonts/Roboto/Roboto-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }
