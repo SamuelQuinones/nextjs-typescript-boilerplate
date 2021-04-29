@@ -15,6 +15,7 @@
     "jasonnutter.search-node-modules",
     "coenraads.bracket-pair-colorizer-2",
     "stylelint.vscode-stylelint",
-    "mrmlnc.vscode-scss"
+    "mrmlnc.vscode-scss",
+    "aaron-bond.better-comments"
   ]
 }
