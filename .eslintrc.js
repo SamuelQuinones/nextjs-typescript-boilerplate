@@ -49,9 +49,6 @@ module.exports = {
         // may turn this on later, creates issues for HTML
         "react/no-unescaped-entities": 0,
 
-        // we use namespaces so...
-        "@typescript-eslint/no-namespace": "off",
-
         // We will use TypeScript's types for component props instead
         "react/prop-types": "off",
 
@@ -72,7 +69,7 @@ module.exports = {
         //     allowConciseArrowFunctionExpressionsStartingWithVoid: true,
         //   },
         // ],
-        "prettier/prettier": ["warn", {}, { usePrettierrc: true }], // Includes .prettierrc.js rules
+        "prettier/prettier": ["warn", {}, { usePrettierrc: true }], // Includes .prettierrc rules
       },
     },
   ],
