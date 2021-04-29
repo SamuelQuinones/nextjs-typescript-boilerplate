@@ -1,13 +1,14 @@
 // visit https://nextjs.org/docs/api-reference/next.config.js/introduction for more info
-// These configurations don't particularly mean anything, they are here to illustrate how you could use this file.
+// starting from Next.js 10.2, all applications that do not use a custom webpack configuration in their next.config.js will automatically use webpack 5.
 
 module.exports = {
-  /** Enables webpack5 features, more info here: https://nextjs.org/docs/messages/webpack5 */
-  future: {
-    webpack5: true,
-  },
   /** By default Next.js will add the `x-powered-by` header. This will opt-out of it */
   poweredByHeader: false,
+  /**
+   * In a NextJS project Strict mode is disabled by default, this will enable it.
+   * Strict mode is highly recommented as it will better prepare your application for the future of react.
+   */
+  reactStrictMode: true,
   /** Headers allow you to set custom HTTP headers for an incoming request path. */
   async headers() {
     return [
