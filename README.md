@@ -16,12 +16,11 @@ I am always open to suggestions on how to improve this, so if you have something
 
 ## Slight Changes to the Base
 
-This boilerplate is as **bare-bones as possible**. It includes the stock NextJS defaults with some slight modificaions:
+This boilerplate is as close to a default `create-next-app` as possible. In addition to the additions described in detail further down, I've also made some slight modifications to the base template:
 
-- Makes use of a `src` directory to keep things clean and orderly
-- makes use of an `assets` directory to house things like styles, fonts, and possibly theme configurations
+- Made use of a `src` directory to keep things clean and orderly
+- Made use of an `assets` directory to house things like styles, fonts, and possibly theme configurations
 - The `globals.css` file has been changed to a `globals.scss` file
-- Typescript strict mode is enabled by default
 - All `.js` files have been converted into `.ts` or `.tsx` files accordingly - because this _is_ using Typescript.
 - Added `sass` to compile scss files without any additional configuration - switched from `node-sass` to the dart version.
 
@@ -43,6 +42,9 @@ I've also made what I would describe as "quality of development" changes:
   - rimraf
   - serve
   - cross-env
+- Made the project opt into [Strict Mode](#why-use-strict-mode):
+  - Typescript strict mode is enabled via `tsconfig.json`
+  - React strict mode is enabled via `next.config.json`
 
 ## Save-Exact Approach
 
@@ -51,7 +53,7 @@ I've included a `.npmrc` file that defaults the behavior to save-exact. This mea
 ```json
 {
   "dependencies": {
-    "next": "10.1.3",
+    "next": "10.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sass": "1.32.11"
@@ -64,10 +66,10 @@ as opposed to this
 ```json
 {
   "dependencies": {
-    "next": "^10.1.3",
+    "next": "^10.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "sass": "^1.32.8"
+    "sass": "^1.32.11"
   }
 }
 ```
@@ -136,7 +138,7 @@ From top to bottom:
 - `build:full` runs `build` and `export`
 - `export` runs the default NextJS export command to the `static_out` directory.
 - `start` runs the default NextJS start command on a specified port.
-- `start:dev` runs the start command, but does so on a different port. This us useful if you have a 'dev' version of your project.
+- `start:dev` runs the NextJS start command, but does so on a different port. This us useful if you have a 'dev' version of your project.
 - `start:static` uses `serve` to start the static export of the project. Not **_necesarrily_** needed in production, but is useful to preview your build easily.
 - `clean` runs `clean:static` and `clean:next`. Cleaning ensures that no old / unneeded files from previous builds carry over into the new one.
 - `clean:next` "cleans" the `.next` folder by deleting it.
@@ -149,6 +151,12 @@ From top to bottom:
 - `lint:fix` runs `lint` but with the `--fix` argument which will actually fix the errors for both Typescript and SCSS.
 - `pretty:check` uses `prettier` to check files against the rules in `.prettierrc`.
 - `pretty:fix` uses `prettier` to FIX issues with files using rules in `.prettierrc`.
+
+## Why use `Strict` Mode?
+
+React's Strict Mode is a development mode only feature for highlighting potential problems in an application. It helps to identify unsafe lifecycles, legacy API usage, and a number of other features.
+
+Your code do not necesarrily _Have_ to opt in to Strict Mode, but it is highly recommended as in general it fosters better development practices and helps your app be ready for the future of react.
 
 ## The `.vscode` Folder
 
@@ -180,6 +188,7 @@ You may already have these or you may find you don't want them, but I've include
 - Bracker Pair Colorizer
 - SCSS Intellisense
 - Stylelint support
+- Better comments
 
 ### Debug Configuration
 
