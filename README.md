@@ -56,7 +56,7 @@ I've included a `.npmrc` file that defaults the behavior to save-exact. This mea
     "next": "10.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "sass": "1.32.11"
+    "sass": "1.32.12"
   }
 }
 ```
@@ -69,7 +69,7 @@ as opposed to this
     "next": "^10.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "sass": "^1.32.11"
+    "sass": "^1.32.12"
   }
 }
 ```
