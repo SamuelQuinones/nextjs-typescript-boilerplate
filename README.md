@@ -156,7 +156,7 @@ From top to bottom:
 
 React's Strict Mode is a development mode only feature for highlighting potential problems in an application. It helps to identify unsafe lifecycles, legacy API usage, and a number of other features.
 
-Your code do not necesarrily _Have_ to opt in to Strict Mode, but it is highly recommended as in general it fosters better development practices and helps your app be ready for the future of react.
+Your code does not necesarrily _Have_ to opt in to Strict Mode, but it is highly recommended as in general it fosters better development practices and helps your app be ready for the future of react.
 
 ## The `.vscode` Folder
 
