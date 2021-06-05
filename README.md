@@ -53,10 +53,10 @@ I've included a `.npmrc` file that defaults the behavior to save-exact. This mea
 ```json
 {
   "dependencies": {
-    "next": "10.2.0",
+    "next": "10.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "sass": "1.32.13"
+    "sass": "1.34.1"
   }
 }
 ```
@@ -66,10 +66,10 @@ as opposed to this
 ```json
 {
   "dependencies": {
-    "next": "^10.2.0",
+    "next": "^10.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "sass": "^1.32.13"
+    "sass": "^1.34.1"
   }
 }
 ```
