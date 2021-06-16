@@ -39,7 +39,6 @@ I've also made what I would describe as "quality of development" changes:
   - `Types.ts` is a convenient place for all of your custom types
 - Added `paths` to `tsconfig.json` for cleaner imports
 - Added additional light-weight development-dependency packages
-  - rimraf
   - serve
   - cross-env
 - Made the project opt into [Strict Mode](#why-use-strict-mode):
