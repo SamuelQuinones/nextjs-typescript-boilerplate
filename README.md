@@ -43,7 +43,7 @@ I've also made what I would describe as "quality of development" changes:
   - cross-env
 - Made the project opt into [Strict Mode](#why-use-strict-mode):
   - Typescript strict mode is enabled via `tsconfig.json`
-  - React strict mode is enabled via `next.config.json`
+  - React strict mode is enabled via `next.config.js`
 
 ## Save-Exact Approach
 
