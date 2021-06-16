@@ -50,26 +50,22 @@ I've also made what I would describe as "quality of development" changes:
 
 I've included a `.npmrc` file that defaults the behavior to save-exact. This means that adding a dependency will install it at the specific version with no carat (`^`).
 
-```json
+```jsonc
 {
   "dependencies": {
-    "next": "10.2.3",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "sass": "1.34.1"
+    "next": "11.0.0"
+    //the rest...
   }
 }
 ```
 
 as opposed to this
 
-```json
+```jsonc
 {
   "dependencies": {
-    "next": "^10.2.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "sass": "^1.34.1"
+    "next": "^11.0.0"
+    //the rest...
   }
 }
 ```
@@ -78,7 +74,7 @@ This is a personal choice as I have found it makes maintaining projects across m
 
 ## Eslint, Prettier, & Stylelint
 
-**_Prettier_** is used to help make files look more "pretty" or more uniform with eachother. It fixes smaller things like extra lines, single vs double quotes, how many characters belong on a line before the line needs to be wrapped, and more.
+**_Prettier_** is used to help make files look more "pretty" or more uniform with eachother. It fixes smaller things like extra lines, single vs double quotes, how many characters belong on a line before the line needs to be wrapped, and more. _NextJS now includes eslint by default so this just aims to make the implementation more approachable._
 
 **_Eslint_** is used to help enforce `prettier` rules and display warnings that the user can act on. Some IDE's will even show errors or warnings if the code breaks eslint's rules. Eslint also has plugins which can extend how useful it is.
 
@@ -102,13 +98,13 @@ With larger scale projects, it can be hard to keep track of all of your files an
 
 With the above additions, you can change imports that look like this:
 
-```ts
+```tsx
 import Header from "../../components/Header";
 ```
 
 to something like this!
 
-```ts
+```tsx
 import Header from "@components/Header";
 ```
 
@@ -120,11 +116,8 @@ import { helperFunction } from "src/helpers/MyHelpers";
 
 ## Additional Dev dependencies
 
-Why did I include `rimraf`, `cross-env` and `serve` you may ask?
-
-1. `rimraf` was added to help with cleaning of build directories. When building / rebuilding NextJS doesn't do a great job of cleaning earlier builds (it leaves behind old build caches) so rimraf helps to clean those folders before a new build is created. Both for regular and static builds.
-2. `cross-env` was added to allow for the use of environment variables in npm scripts across multiple platforms. Currently it is only used to customize the static export directory.
-3. `serve` was added for those who are opting for pure static exports of their NextJS project. Serve allows you to preview your static build. It is similar to "live preview" for a stock-html project.
+- `cross-env` was added to allow for the use of environment variables in npm scripts across multiple platforms. Currently it is only used to customize the static export directory.
+- `serve` was added for those who are opting for pure static exports of their NextJS project. Serve allows you to preview your static build. It is similar to "live preview" for a stock-html project.
 
 ## The NPM Scripts
 
@@ -134,19 +127,16 @@ From top to bottom:
 
 - `dev` is the default NextJS dev command
 - `dev:debug` runs the dev script but in a debug mode (see `.vscode/launch.json` for debug configuration)
-- `build` runs the default NextJS build command, but first it "cleans" the `.next` and `static_out` folders
+- `build` runs the default NextJS build command
 - `build:full` runs `build` and `export`
 - `export` runs the default NextJS export command to the `static_out` directory.
 - `start` runs the default NextJS start command on a specified port.
 - `start:dev` runs the NextJS start command, but does so on a different port. This us useful if you have a 'dev' version of your project.
 - `start:static` uses `serve` to start the static export of the project. Not **_necesarrily_** needed in production, but is useful to preview your build easily.
-- `clean` runs `clean:static` and `clean:next`. Cleaning ensures that no old / unneeded files from previous builds carry over into the new one.
-- `clean:next` "cleans" the `.next` folder by deleting it.
-- `clean:static` "cleans" the `static_out` directory by deleting it.
-- `clean:light` "cleans" the **_contents_** of the `.next` and `static_out` folders by deleting what is inside - does not delete the folders. This could be useful depending on how you deploy your app.
 - `checkTs` can quickly check your typescript for rule violations, useful if you just moved around a lot of files.
 - `eslint` specifies the parameters with which to run eslint using rules set in `.eslintrc.js`.
 - `stylelint` runs stylelint on all css, scss, and sass files in the `src/assets/styles` directory using rules in `.stylelintrc`.
+- `lint:next` runs the built-in NextJS lint command
 - `lint` runs `eslint` on the `src` directory and the contents. Also runs `stylelint` This will only warn you of prolems, not fix them.
 - `lint:fix` runs `lint` but with the `--fix` argument which will actually fix the errors for both Typescript and SCSS.
 - `pretty:check` uses `prettier` to check files against the rules in `.prettierrc`.
