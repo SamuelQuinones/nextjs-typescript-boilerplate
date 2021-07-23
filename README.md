@@ -30,6 +30,7 @@ I've also made what I would describe as "quality of development" changes:
 
 - Added some extra fonts I've used - and an accompanying `_fonts.scss` file - even if you don't use them, this shows how you can implement your own!
 - Added a simple Button component in `src/components/Button.tsx` to demonstrate organization and also the custom import path configuration that Typescript allows.
+- Added Dark / Light mode via [`next-themes`](https://github.com/pacocoursey/next-themes) which was made by one of the NextJS Team members!
 - Added [Eslint](https://eslint.org/) and [prettier](https://prettier.io/) - which are configured to work together - to help with code format concistency. There is a NPM script that can look for problems and attempt to fix them!
 - Added [Stlyelint](https://stylelint.io/) for better css / scss linting.
 - Added `.gitattributes` take from https://github.com/alexkaratarakis/gitattributes/blob/master/Web.gitattributes I've found that this helps with cross platform development (those pesky line endings!)
@@ -37,6 +38,7 @@ I've also made what I would describe as "quality of development" changes:
 - Added some utilities under `src/util`:
   - `index.ts` has some general functions you could find use for in almost any project
   - `Types.ts` is a convenient place for all of your custom types
+- Added a custom `hooks` folder for your custom react hooks, and included some useful ones to start out with
 - Added `paths` to `tsconfig.json` for cleaner imports
 - Added additional light-weight development-dependency packages
   - serve
@@ -52,7 +54,7 @@ I've included a `.npmrc` file that defaults the behavior to save-exact. This mea
 ```jsonc
 {
   "dependencies": {
-    "next": "11.0.0"
+    "next": "11.0.1"
     //the rest...
   }
 }
@@ -63,7 +65,7 @@ as opposed to this
 ```jsonc
 {
   "dependencies": {
-    "next": "^11.0.0"
+    "next": "^11.0.1"
     //the rest...
   }
 }
@@ -73,9 +75,9 @@ This is a personal choice as I have found it makes maintaining projects across m
 
 ## Eslint, Prettier, & Stylelint
 
-**_Prettier_** is used to help make files look more "pretty" or more uniform with eachother. It fixes smaller things like extra lines, single vs double quotes, how many characters belong on a line before the line needs to be wrapped, and more. _NextJS now includes eslint by default so this just aims to make the implementation more approachable._
+**_Prettier_** is used to help make files look more "pretty" or more uniform with eachother. It fixes smaller things like extra lines, single vs double quotes, how many characters belong on a line before the line needs to be wrapped, and more.
 
-**_Eslint_** is used to help enforce `prettier` rules and display warnings that the user can act on. Some IDE's will even show errors or warnings if the code breaks eslint's rules. Eslint also has plugins which can extend how useful it is.
+**_Eslint_** is used to help enforce `prettier` rules and display warnings that the user can act on. Some IDE's will even show errors or warnings if the code breaks eslint's rules. Eslint also has plugins which can extend how useful it is. _NextJS now includes eslint by default so this just aims to make the implementation more approachable._
 
 **_Stylelint_** is used to provide linting support for css and scss files.
 
@@ -173,7 +175,6 @@ You may already have these or you may find you don't want them, but I've include
 - Gitlens
 - Vscode Icons
 - Dotenv Intellisense
-- Search Node Modules
 - Bracker Pair Colorizer
 - SCSS Intellisense
 - Stylelint support
