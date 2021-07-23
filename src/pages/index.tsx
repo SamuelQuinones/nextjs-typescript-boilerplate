@@ -1,8 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
-import Button from "@components/Button";
 import styles from "../assets/styles/Home.module.css";
-import { prettyPrint } from "@util"; // import alias
+import Picker from "@components/ThemePicker";
 
 export default function Home() {
   return (
@@ -14,12 +13,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Button onClick={() => alert(prettyPrint({ message: "hello" }))}>
-          This is a Custom Component
-        </Button>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        <Picker />
 
         <p className={styles.description}>
           Get started by editing{" "}

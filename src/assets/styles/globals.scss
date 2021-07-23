@@ -1,7 +1,10 @@
 @import "fonts";
+@import "themes";
 
 html,
 body {
+  background-color: var(--background);
+  color: var(--text);
   padding: 0;
   margin: 0;
   font-family: Roboto, Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,

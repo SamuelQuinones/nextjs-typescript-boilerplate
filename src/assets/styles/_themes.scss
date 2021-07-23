@@ -1,0 +1,13 @@
+:root {
+  --background: white;
+  --code-bg: #fafafa;
+  --border: #eaeaea;
+  --text: black;
+}
+
+[data-theme="dark"] {
+  --background: black;
+  --code-bg: #202020;
+  --border: #2e2e2e;
+  --text: white;
+}
