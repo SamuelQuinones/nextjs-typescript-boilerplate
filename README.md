@@ -23,14 +23,13 @@ This boilerplate is as close to a default `create-next-app` as possible. In addi
 - The `globals.css` file has been changed to a `globals.scss` file
 - All `.js` files have been converted into `.ts` or `.tsx` files accordingly - because this _is_ using Typescript.
 - Added `sass` to compile scss files without any additional configuration - switched from `node-sass` to the dart version.
+- Added Dark / Light mode via [`next-themes`](https://github.com/pacocoursey/next-themes) which was made by one of the NextJS Team members!
 
 ## Additions
 
 I've also made what I would describe as "quality of development" changes:
 
 - Added some extra fonts I've used - and an accompanying `_fonts.scss` file - even if you don't use them, this shows how you can implement your own!
-- Added a simple Button component in `src/components/Button.tsx` to demonstrate organization and also the custom import path configuration that Typescript allows.
-- Added Dark / Light mode via [`next-themes`](https://github.com/pacocoursey/next-themes) which was made by one of the NextJS Team members!
 - Added [Eslint](https://eslint.org/) and [prettier](https://prettier.io/) - which are configured to work together - to help with code format concistency. There is a NPM script that can look for problems and attempt to fix them!
 - Added [Stlyelint](https://stylelint.io/) for better css / scss linting.
 - Added `.gitattributes` take from https://github.com/alexkaratarakis/gitattributes/blob/master/Web.gitattributes I've found that this helps with cross platform development (those pesky line endings!)
