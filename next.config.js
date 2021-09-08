@@ -1,6 +1,6 @@
 // visit https://nextjs.org/docs/api-reference/next.config.js/introduction for more info
-// starting from Next.js 10.2, all applications that do not use a custom webpack configuration in their next.config.js will automatically use webpack 5.
 
+/** @type {import('next').NextConfig} */
 module.exports = {
   /** By default Next.js will add the `x-powered-by` header. This will opt-out of it */
   poweredByHeader: false,
