@@ -11,8 +11,8 @@ module.exports = {
     "!.prettierrc",
   ],
   extends: [
-    "next/core-web-vitals",
     "plugin:jsx-a11y/recommended", // Accessibility rules
+    "next/core-web-vitals", // NextJS has some jsx-a11y overrides so we load the base second
     "plugin:prettier/recommended", // Prettier plugin
   ],
   rules: {
