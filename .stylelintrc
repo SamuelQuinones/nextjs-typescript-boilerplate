@@ -4,6 +4,6 @@
     "at-rule-no-unknown": null,
     "no-invalid-position-at-import-rule": null,
     "declaration-block-trailing-semicolon": "always",
-    "no-descending-specificity": null,
+    "no-descending-specificity": null
   }
 }
